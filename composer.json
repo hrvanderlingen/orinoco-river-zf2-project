@@ -1,0 +1,17 @@
+{
+    "name": "ZF2 project",
+    "description": "A ZF2 project",
+    "license": "BSD-3-Clause",
+    "keywords": [
+    "framework",
+    "zf2"
+    ],
+    "homepage": "http://framework.zend.com/",
+    "require": {
+        "php": ">=5.3.3",
+        "zendframework/zendframework": "*"
+    },
+     "require-dev":{
+        "squizlabs/php_codesniffer": "1.*"
+    }
+}
