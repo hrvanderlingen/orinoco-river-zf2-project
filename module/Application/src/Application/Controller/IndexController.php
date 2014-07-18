@@ -7,10 +7,12 @@ use Zend\View\Model\ViewModel;
 
 class IndexController extends AbstractActionController
 {
+
     public function indexAction()
     {
-        return new ViewModel;
-       
+        $viewModel = new ViewModel;
+        $viewModel->setTemplate('application/index/index.phtml');
+        return $viewModel;
     }
 
 }
