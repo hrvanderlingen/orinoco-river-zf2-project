@@ -3,9 +3,10 @@
 if (file_exists('vendor/autoload.php')) {
     $loader = include 'vendor/autoload.php';
 }
-// generate this class map
-// ./path/to/bin/classmap_generator.php -w --library path/to/Zend --output path/to/Zend/Zendautoload_classmap.php
-$classMap = require __DIR__ . '/vendor/zendframework/zendframework/library/Zend/zend_autoload_classmap.php';
+// generate Zend Framework class map
+// move to the vendor folder and execute
+// ./bin/classmap_generator.php -w --library zendframework/zendframework/library/Zend --output zend_autoload_classmap.php
+$classMap = require __DIR__ . '/vendor/zend_autoload_classmap.php';
 
 // Register the class map:
 $loader->addClassMap($classMap);
