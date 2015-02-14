@@ -15,12 +15,25 @@ return array(
                     ),
                 ),
             ),
+            'custom-login-page' => array(
+                'type' => 'Literal',
+                'options' => array(
+                    'route' => '/do/login',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Login',
+                        'action' => 'index',
+                    ),
+                ),
+                'may_terminate' => true,
+            ),
         ),
     ),
     'controllers' => array(
         'invokables' => array(
             'Application\Controller\Index'
             => 'Application\Controller\IndexController',
+            'Application\Controller\Login'
+            => 'Application\Controller\LoginController',
         ),
     ),
     'view_manager' => array(
