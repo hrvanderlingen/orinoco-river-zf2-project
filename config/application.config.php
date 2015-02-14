@@ -6,6 +6,8 @@ $env = getenv('APPLICATION_ENVIRONMENT') ? : 'development';
 return array(
     'modules' => array(
         'Application',
+        'ZfcBase',
+        'ZfcUser',
     ),
     'module_listener_options' => array(
         'module_paths' => array(

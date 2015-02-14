@@ -9,7 +9,8 @@
     "homepage": "http://framework.zend.com/",
     "require": {
         "php": ">=5.3.3",
-        "zendframework/zendframework": "*"
+        "zendframework/zendframework": "*",
+        "zf-commons/zfc-user": "dev-master"
     },
     "require-dev":{
         "squizlabs/php_codesniffer": "1.*"
