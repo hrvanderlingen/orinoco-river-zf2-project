@@ -1,5 +1,8 @@
 <?php
 
 return array(
-    'environment' => 'development'
+    'environment' => 'development',
+    'view_manager' => array(
+        'display_not_found_reason' => false,
+        'display_exceptions' => false),
 );
