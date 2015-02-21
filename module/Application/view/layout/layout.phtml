@@ -1,3 +1,7 @@
+<?php
+$req = $this->getHelperPluginManager()->getServiceLocator()->get('request')->getUri()->getPath();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -19,14 +23,55 @@
 
         <div class="container">
 
-            <div class="row">
-                <div class="col-md-12 margin-top">
-                </div>
+            <div class="header"> 
+
+                <nav class="navbar navbar-inverse" role="navigation">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+
+                        <div class="collapse navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li <?php echo ((isset($req) && $req == '/') ? "class='active'" : ""); ?> ><a href="<?php echo $this->url('home') ?>"><?php echo $this->translate('Home') ?></a></li>
+
+                                <?php if (!$this->zfcUserIdentity()): ?>
+                                    <li <?php echo ((isset($req) && $req == '/do/login') ? "class='active'" : ""); ?>><a href="<?php echo $this->url('custom-login-page') ?>"><?php echo $this->translate('Login') ?></a></li>
+                                    <?php endIf; ?>
+
+                                <?php if ($this->zfcUserIdentity()): ?>
+                                    <li <?php echo ((isset($req) && $req == '/user/logout') ? "class='active'" : ""); ?>><a href="<?php echo $this->url('zfcuser/logout') ?>"><?php echo $this->translate('Logout') ?></a></li>
+                                    <?php endIf; ?>
+
+                                <?php if ($this->zfcUserIdentity()): ?>
+                                    <li <?php echo ((isset($req) && $req == '/account') ? "class='active'" : ""); ?>><a href="<?php echo $this->url('account') ?>"><?php echo $this->translate('Account') ?></a></li>
+                                    <?php endIf; ?>
+
+                            </ul>
+                        </div><!--/.nav-collapse -->
+
+                </nav>
 
             </div>
 
-            <?php echo $this->content; ?>
+            <div class="content">
+
+                <?php echo $this->content; ?>
+
+            </div>
 
         </div>
-    </body>
+
+        <div class="footer">
+
+            <p>&copy; Orinono River ZF2 Project <?php echo date('Y'); ?></p>
+
+        </div>
+
+    </div>
+</body>
 </html>

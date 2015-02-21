@@ -1,3 +1,35 @@
-.margin-top {
-    margin-top:20px;
+html, body, .container {
+    height: 100%;  
 }
+
+.container {
+    max-width: 730px;
+}
+
+body > .container {
+    height: auto;
+    min-height: 100%;
+}
+
+.header {
+    margin-bottom: 60px;
+    max-width: 730px;
+}
+
+.content {
+    padding-bottom: 7em;
+}
+
+.footer {    
+    height: 7em;   
+    margin-top: -7em;   
+    background-color: #dddddd;
+    max-width: 730px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer p {
+    text-align: center;
+}
+

@@ -26,6 +26,17 @@ return array(
                 ),
                 'may_terminate' => true,
             ),
+            'account' => array(
+                'type' => 'Literal',
+                'options' => array(
+                    'route' => '/account',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Account',
+                        'action' => 'index',
+                    ),
+                ),
+                'may_terminate' => true,
+            ),
         ),
     ),
     'controllers' => array(
@@ -34,6 +45,8 @@ return array(
             => 'Application\Controller\IndexController',
             'Application\Controller\Login'
             => 'Application\Controller\LoginController',
+            'Application\Controller\Account'
+            => 'Application\Controller\AccountController',
         ),
     ),
     'view_manager' => array(
@@ -52,6 +65,16 @@ return array(
     'service_manager' => array(
         'factories' => array(
             'Zend\Db\Adapter\Adapter' => 'Zend\Db\Adapter\AdapterServiceFactory',
+        ),
+    ),
+    'translator' => array(
+        'locale' => 'en_US',
+        'translation_file_patterns' => array(
+            array(
+                'type' => 'gettext',
+                'base_dir' => __DIR__ . '/../language',
+                'pattern' => '%s.mo',
+            ),
         ),
     ),
 );
