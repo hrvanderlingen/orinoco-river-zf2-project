@@ -60,6 +60,8 @@ $req = $this->getHelperPluginManager()->getServiceLocator()->get('request')->get
 
             <div class="content">
 
+                <?php echo $this->flashHelper()->render(); ?>
+
                 <?php echo $this->content; ?>
 
             </div>
@@ -68,7 +70,8 @@ $req = $this->getHelperPluginManager()->getServiceLocator()->get('request')->get
 
         <div class="footer">
 
-            <p>&copy; Orinono River ZF2 Project <?php echo date('Y'); ?></p>
+            <p>&copy; Orinoco River ZF2 Project <?php echo date('Y'); ?></p>
+
 
         </div>
 

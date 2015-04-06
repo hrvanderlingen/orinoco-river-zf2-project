@@ -28,4 +28,13 @@ class Module
         );
     }
 
+    public function getViewHelperConfig()
+    {
+        return array(
+            'invokables' => array(
+                'flashHelper' => 'Application\View\Helper\FlashHelper',
+            ),
+        );
+    }
+
 }
