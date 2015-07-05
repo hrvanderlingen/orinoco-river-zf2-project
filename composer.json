@@ -1,5 +1,5 @@
 {
-    "name": "ZF2 project",
+    "name": "zf2-project",
     "description": "A ZF2 project",
     "license": "BSD-3-Clause",
     "keywords": [
@@ -16,11 +16,14 @@
     "require": {
         "php": ">=5.3.3",
         "zendframework/zendframework": "*",
-        "zf-commons/zfc-user": "dev-bugfix as 1.0.0"
+        "zf-commons/zfc-user": "dev-bugfix as 1.0.0",
+        "twbs/bootstrap": "^3.3",
+        "components/jquery": "^2.1"
        
     },
     "require-dev":{
         "squizlabs/php_codesniffer": "1.*",
-        "phpunit/phpunit": "4.8.*@dev"
+        "phpunit/phpunit": "3.7.*@dev",
+        "codeception/codeception":"1.8"
     }    
 }
