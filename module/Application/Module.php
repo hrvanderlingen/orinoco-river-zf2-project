@@ -33,6 +33,8 @@ class Module
         return array(
             'invokables' => array(
                 'flashHelper' => 'Application\View\Helper\FlashHelper',
+                'requestUriHelper' => 'Application\View\Helper\requestUriHelper',
+                'configurationHelper' => 'Application\View\Helper\configurationHelper',
             ),
         );
     }

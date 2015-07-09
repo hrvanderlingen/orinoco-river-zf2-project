@@ -1,7 +1,3 @@
-<?php
-$req = $this->getHelperPluginManager()->getServiceLocator()->get('request')->getUri()->getPath();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -11,13 +7,18 @@ $req = $this->getHelperPluginManager()->getServiceLocator()->get('request')->get
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link href="/components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href="/css/style.css" rel="stylesheet">
+
+        <?php if ($this->configurationHelper()['environment'] == 'production') { ?>
+            <link href="/css/style.min.css" rel="stylesheet">
+        <?php } else { ?>
+            <link href="/css/style.css" rel="stylesheet">
+        <?php } ?>
 
         <script src="/components/jquery/jquery.min.js"></script>
         <script src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
 
 
-        <title>Minimal Zend Framework</title>
+        <title>Orinoco River Zend Framework demo site</title>
     </head>
     <body>
 
@@ -37,6 +38,9 @@ $req = $this->getHelperPluginManager()->getServiceLocator()->get('request')->get
 
                         <div class="collapse navbar-collapse">
                             <ul class="nav navbar-nav">
+
+                                <?php $req = $this->requestUriHelper(); ?>
+
                                 <li <?php echo ((isset($req) && $req == '/') ? "class='active'" : ""); ?> ><a href="<?php echo $this->url('home') ?>"><?php echo $this->translate('Home') ?></a></li>
 
                                 <?php if (!$this->zfcUserIdentity()): ?>
