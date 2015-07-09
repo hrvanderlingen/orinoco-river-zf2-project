@@ -30,3 +30,6 @@ shell_exec('php '.$timestamp.'/vendor/bin/classmap_generator.php -w --library '.
 shell_exec('php '.$timestamp.'/vendor/bin/classmap_generator.php -w --library '.$timestamp.'/module/Application --output '.$timestamp.'/module/Application/autoload_classmap.php');
 
 shell_exec('cp -R configs/* ' . $timestamp . '/config/autoload');
+
+shell_exec('sass -t compressed  public_html/scss/*.scss public_html/css/style.min.css');
+
