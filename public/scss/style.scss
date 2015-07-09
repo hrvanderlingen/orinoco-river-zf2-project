@@ -1,3 +1,5 @@
+$background-color: #dddddd;
+
 html, body, .container {
     height: 100%;  
 }
@@ -23,7 +25,7 @@ body > .container {
 .footer {    
     height: 7em;   
     margin-top: -7em;   
-    background-color: #dddddd;
+    background-color: $background-color;
     max-width: 730px;
     margin-left: auto;
     margin-right: auto;
