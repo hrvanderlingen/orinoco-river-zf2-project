@@ -11,7 +11,7 @@ shell_exec('git clone git@github.com:hrvanderlingen/orinoco-river-zf2-project.gi
 
 shell_exec('unlink public_html');
 
-shell_exec('ln -s ' . $timestamp . '/public public_html');
+shell_exec('ln -s ' . $timestamp . '/public_html public_html');
 
 shell_exec('php composer.phar update  --working-dir ' .$timestamp);
 
