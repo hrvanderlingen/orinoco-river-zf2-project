@@ -17,6 +17,10 @@ shell_exec('php composer.phar update  --working-dir ' .$timestamp);
 
 shell_exec('php composer.phar update  --working-dir ' . $timestamp . '--no-dev');
 
+shell_exec('mkdir data');
+shell_exec('mkdir data/cache');
+shell_exec('chmod 777 data/cache');
+
 shell_exec('mkdir public_html/css');
 
 shell_exec('mkdir public_html/components');
