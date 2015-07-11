@@ -33,7 +33,7 @@ shell_exec('php '.$timestamp.'/vendor/bin/classmap_generator.php -w --library '.
 
 shell_exec('php ' . $timestamp . '/vendor/bin/classmap_generator.php -w --library ' . $timestamp . '/module/Application --output ' . $timestamp . '/module/Application/autoload_classmap.php');
 
-shell_exec('php ' . $timestamp . '/vendor/bin/templatemap_generator.php -w --view ' . $timestamp . '/module/Application/view --output ' . $timestamp . '/module/Application/autoload_classmap.php');
+shell_exec('php ' . $timestamp . '/vendor/bin/templatemap_generator.php -w --view ' . $timestamp . '/module/Application/view --output ' . $timestamp . '/module/Application/template_map.php');
 
 shell_exec('cp -R configs/* ' . $timestamp . '/config/autoload');
 
