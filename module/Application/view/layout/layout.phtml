@@ -8,7 +8,8 @@
 
         <link href="/components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
-        <?php if ($this->configurationHelper()['environment'] == 'production') { ?>
+        <?php $conf = $this->configurationHelper(); ?>
+        <?php if ($conf['environment'] == 'production') { ?>
             <link href="/css/style.min.css" rel="stylesheet">
         <?php } else { ?>
             <link href="/css/style.css" rel="stylesheet">
