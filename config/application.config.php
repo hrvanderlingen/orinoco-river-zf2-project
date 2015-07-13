@@ -1,11 +1,17 @@
 <?php
+
+$modules = array(
+    'Application',
+    'ZfcBase',
+    'ZfcUser',
+);
+
+if (APPLICATION_ENVIRONMENT == 'development') {
+    $modules[] = 'Chemical';
+}
+
 return array(
-    'modules' => array(
-        'Application',
-        'ZfcBase',
-        'ZfcUser',
-        'Chemical'
-    ),
+    'modules' => $modules,
     'module_listener_options' => array(
         'module_paths' => array(
             './module',
