@@ -12,6 +12,8 @@
     "type": "vcs",
     "url": "https://github.com/hrvanderlingen/ZfcUser"
      }],
+ 
+  
     
     "require": {
         "php": ">=5.3.3",
@@ -19,11 +21,20 @@
         "zf-commons/zfc-user": "dev-bugfix as 1.0.0",
         "twbs/bootstrap": "^3.3",
         "components/jquery": "^2.1"
-       
+      
+                    
     },
     "require-dev":{
         "squizlabs/php_codesniffer": "1.*",
         "phpunit/phpunit": "3.7.*@dev",
         "codeception/codeception":"1.8"
-    }    
+        
+    },
+    
+    "autoload": {
+        "psr-4":{
+            "Chemical\\" : "vendor/hrvanderlingen/chemical"
+        }
+    }
+        
 }

@@ -4,6 +4,7 @@ return array(
         'Application',
         'ZfcBase',
         'ZfcUser',
+        'Chemical'
     ),
     'module_listener_options' => array(
         'module_paths' => array(

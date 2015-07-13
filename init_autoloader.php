@@ -10,7 +10,7 @@ if (file_exists('vendor/autoload.php')) {
 $classMapLocation = __DIR__ . '/vendor/zend_autoload_classmap.php';
 
 if(file_exists($classMapLocation)){
-    $classMap = require __DIR__ . '/vendor/zend_autoload_classmap.php';
+    $classMap = require $classMapLocation;
     // Register the class map:
     $loader->addClassMap($classMap);
 
