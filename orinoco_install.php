@@ -17,15 +17,13 @@ shell_exec('php composer.phar update  --working-dir ' .$timestamp);
 
 shell_exec('php composer.phar update  --working-dir ' . $timestamp . '--no-dev');
 
-shell_exec('mkdir data');
-shell_exec('mkdir data/cache');
-shell_exec('chmod 777 data/cache');
+shell_exec('mkdir ' . $timestamp . '/data');
+shell_exec('mkdir ' . $timestamp . '/data/cache');
+shell_exec('chmod 777 ' . $timestamp . '/data/cache');
 
 shell_exec('mkdir public_html/css');
 
-shell_exec('mkdir public_html/components');
-
-shell_exec('ln -s   ' . $timestamp . '/vendor/components  public_html/components');
+shell_exec('ln -s   ' . $timestamp . '/vendor/components  ' . $timestamp . '/public_html/components');
 
 shell_exec('php '.$timestamp.'/vendor/bin/classmap_generator.php -w --library '.$timestamp.'/vendor/zendframework/zendframework/library/Zend --output '.$timestamp.'/vendor/zend_autoload_classmap.php');
 
