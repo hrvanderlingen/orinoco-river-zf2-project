@@ -18,7 +18,9 @@
         "zendframework/zendframework": "*",
         "zf-commons/zfc-user": "dev-bugfix as 1.0.0",
         "components/bootstrap": "^3.3",
-        "components/jquery": "^2.1"                    
+        "components/jquery": "^2.1",
+        "kriswallsmith/assetic":"*",
+        "rwoverdijk/assetmanager":"*"    
     },
     "require-dev":{
         "squizlabs/php_codesniffer": "1.*",

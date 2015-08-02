@@ -4,6 +4,7 @@ $modules = array(
     'Application',
     'ZfcBase',
     'ZfcUser',
+    'AssetManager',
 );
 
 if (APPLICATION_ENVIRONMENT == 'development') {
