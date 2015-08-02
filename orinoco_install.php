@@ -25,13 +25,7 @@ shell_exec('mkdir public_html/css');
 
 shell_exec('mkdir public_html/components');
 
-shell_exec('mkdir public_html/components/bootstrap');
-
-shell_exec('mkdir public_html/components/jquery');
-
-shell_exec('cp -R  ' . $timestamp . '/vendor/twbs/bootstrap/*  public_html/components/bootstrap');
-
-shell_exec('cp -R  ' . $timestamp . '/vendor/components/jquery/*  public_html/components/jquery');
+shell_exec('ln -s   ' . $timestamp . '/vendor/components  public_html/components');
 
 shell_exec('php '.$timestamp.'/vendor/bin/classmap_generator.php -w --library '.$timestamp.'/vendor/zendframework/zendframework/library/Zend --output '.$timestamp.'/vendor/zend_autoload_classmap.php');
 

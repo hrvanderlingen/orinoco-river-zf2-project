@@ -1,28 +1,24 @@
 {
-    "name": "zf2-project",
+    "name": "Orinoco River",
     "description": "A ZF2 project",
     "license": "BSD-3-Clause",
     "keywords": [
     "framework",
     "zf2"
     ],
-    "homepage": "http://framework.zend.com/",
-    
+    "homepage": "http://procedurecheck.wordpress.com/",
+    "type":"project",
     "repositories": [{
     "type": "vcs",
     "url": "https://github.com/hrvanderlingen/ZfcUser"
      }],
  
-  
-    
     "require": {
         "php": ">=5.3.3",
         "zendframework/zendframework": "*",
         "zf-commons/zfc-user": "dev-bugfix as 1.0.0",
-        "twbs/bootstrap": "^3.3",
-        "components/jquery": "^2.1"
-      
-                    
+        "components/bootstrap": "^3.3",
+        "components/jquery": "^2.1"                    
     },
     "require-dev":{
         "squizlabs/php_codesniffer": "1.*",
@@ -30,11 +26,9 @@
         "codeception/codeception":"1.8"
         
     },
-    
-    "autoload": {
-        "psr-4":{
-            "Chemical\\" : "vendor/hrvanderlingen/chemical"
+     "autoload": {
+        "psr-4": {
+            "Chemical\\": "vendor/hrvanderlingen/chemical"
         }
     }
-        
 }
