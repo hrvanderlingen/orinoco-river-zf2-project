@@ -27,10 +27,6 @@
         "phpunit/phpunit": "3.7.*@dev",
         "codeception/codeception":"1.8"
         
-    },
-     "autoload": {
-        "psr-4": {
-            "Chemical\\": "vendor/hrvanderlingen/chemical"
-        }
     }
+    
 }
