@@ -7,9 +7,9 @@ $modules = array(
     'AssetManager',
 );
 
-if (APPLICATION_ENVIRONMENT == 'development') {
-    $modules[] = 'Chemical';
-}
+
+$modules[] = 'Chemical';
+
 
 return array(
     'modules' => $modules,

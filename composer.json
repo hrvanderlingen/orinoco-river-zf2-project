@@ -11,7 +11,20 @@
     "repositories": [{
     "type": "vcs",
     "url": "https://github.com/hrvanderlingen/ZfcUser"
-     }],
+     }, 
+     {
+            "type": "package",
+            "package": {
+                "name": "hrvanderlingen/chemical",
+                "version": "1.0",
+                "dist": {
+                    "url": "https://github.com/hrvanderlingen/chemical/archive/master.zip",
+                    "type": "zip"
+                }
+            }
+        }
+     
+     ],
  
     "require": {
         "php": ">=5.3.3",
@@ -20,13 +33,18 @@
         "components/bootstrap": "^3.3",
         "components/jquery": "^2.1",
         "kriswallsmith/assetic":"*",
-        "rwoverdijk/assetmanager":"*"    
+        "rwoverdijk/assetmanager":"*"        
     },
     "require-dev":{
         "squizlabs/php_codesniffer": "1.*",
         "phpunit/phpunit": "3.7.*@dev",
         "codeception/codeception":"1.8"
         
+    },
+     "autoload": {
+        "psr-4": {
+            "Chemical\\": "vendor/hrvanderlingen/chemical"
+        }
     }
     
 }
