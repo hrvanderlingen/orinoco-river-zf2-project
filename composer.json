@@ -22,7 +22,18 @@
                     "type": "zip"
                 }
             }
-        }
+        },
+         {
+            "type": "package",
+            "package": {
+                "name": "diniska/chemistry",
+                "version": "1.0",
+                "dist": {
+                    "url": "https://github.com/diniska/chemistry/archive/master.zip",
+                    "type": "zip"
+                }
+            }
+        }     
      
      ],
  
@@ -33,7 +44,8 @@
         "components/bootstrap": "^3.3",
         "components/jquery": "^2.1",
         "kriswallsmith/assetic":"*",
-        "rwoverdijk/assetmanager":"*"        
+        "rwoverdijk/assetmanager":"*",
+        "diniska/chemistry": "*"        
     },
     "require-dev":{
         "squizlabs/php_codesniffer": "1.*",
