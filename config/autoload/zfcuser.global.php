@@ -225,8 +225,8 @@ return array(
     'zfcuser' => $settings,
     'service_manager' => array(
         'aliases' => array(
-            'zfcuser_zend_db_adapter' => (isset($settings['zend_db_adapter'])) ? $settings['zend_db_adapter'] : 'Zend\Db\Adapter\Adapter',
-        ),
+            'zfcuser_zend_db_adapter' =>  'dbAdapter',
+	),
     ),
 );
 

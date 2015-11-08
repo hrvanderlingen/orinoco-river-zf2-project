@@ -10,8 +10,9 @@ return array(
         'display_exceptions' => false),
     'db' => array(
         'driver' => 'pdo',
-        'dsn' => 'mysql:dbname=zf2project;host=localhost',
-        'username' => 'xxxxxxxx',
+	'dsn' => 'mysql:dbname=zf2project;host=localhost',
+	'username' => 'xxxxxxxx',
         'password' => 'xxxxxxxx',
     ),
+    'logDir' => __DIR__ . '/../../data/logs'
 );
