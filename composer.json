@@ -40,18 +40,20 @@
     "require": {
         "php": ">=5.3.3",
         "zendframework/zendframework": "*",
-        "zf-commons/zfc-user": "dev-bugfix as 1.0.0",
+        "zf-commons/zfc-user": "*",
+        "zf-commons/zfc-admin": "*",
         "components/bootstrap": "^3.3",
         "components/jquery": "^2.1",
         "kriswallsmith/assetic":"*",
         "rwoverdijk/assetmanager":"*",
-        "diniska/chemistry": "*"        
+        "diniska/chemistry": "*",
+        "bjyoungblood/bjy-authorize":"1.4.*",
+        "danielss89/zfc-user-admin": "*@dev"
     },
     "require-dev":{
         "squizlabs/php_codesniffer": "1.*",
         "phpunit/phpunit": "3.7.*@dev",
         "codeception/codeception":"1.8"
-        
     },
      "autoload": {
         "psr-4": {

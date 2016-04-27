@@ -18,6 +18,8 @@ class Module
 	    $logger = $sm->get('Application\Service\LoggingService');
 	    $logger->setDatabaseLogging();
 	});
+
+
     }
 
     public function getConfig()
@@ -58,9 +60,15 @@ class Module
     {
 	return array(
 	    'factories' => array(
-		'Application\Service\LoggingService' => 'Application\Service\LoggingServiceFactory'
+		'Application\Service\LoggingService' => 'Application\Service\LoggingServiceFactory',
+		'UnauthorizedStrategy' => function ($sm) {
+		    $strategy = new View\UnauthorizedStrategy;
+		    return $strategy;
+		},
 	    )
 	);
     }
+
+ 
 
 }

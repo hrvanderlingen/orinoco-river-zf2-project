@@ -5,6 +5,7 @@ $modules = array(
     'ZfcBase',
     'ZfcUser',
     'AssetManager',
+    'BjyAuthorize',    
 );
 
 
