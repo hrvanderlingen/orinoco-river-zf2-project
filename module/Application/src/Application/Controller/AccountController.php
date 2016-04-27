@@ -10,14 +10,9 @@ class AccountController extends AbstractActionController
 
     public function indexAction()
     {
-        if (!$this->zfcUserAuthentication()->hasIdentity()) {
-            $this->flashMessenger()->addMessage('You are not authorised!');
-            return $this->redirect()->toRoute('home');
-        }
-
-        $viewModel = new ViewModel;
-        $viewModel->setTemplate('/application/account/index.phtml');
-        return $viewModel;
+	$viewModel = new ViewModel;
+	$viewModel->setTemplate('/application/account/index.phtml');
+	return $viewModel;
     }
 
 }

@@ -37,7 +37,32 @@ return array(
 		),
 		'may_terminate' => true,
 	    ),
+	    'changepassword' => array(
+		'type' => 'Literal',
+		'options' => array(
+		    'route' => '/user/changepassword',
+		    'defaults' => array(
+			'controller' => 'Application\Controller\User',
+			'action' => 'changepassword',
+		    ),
+		),
+		'may_terminate' => true,
+	    ),
+	    'changeemail' => array(
+		'type' => 'Literal',
+		'options' => array(
+		    'route' => '/user/changeemail',
+		    'defaults' => array(
+			'controller' => 'Application\Controller\User',
+			'action' => 'changeemail',
+		    ),
+		),
+		'may_terminate' => true,
+	    ),
 	),
+    ),
+    'aliases' => array(
+	'bjyauthorize_zend_db_adapter' => 'dbAdapter',
     ),
     'controllers' => array(
 	'invokables' => array(
@@ -46,9 +71,24 @@ return array(
 	    'Application\Controller\Login'
 	    => 'Application\Controller\LoginController',
 	    'Application\Controller\Account'
-	    => 'Application\Controller\AccountController',
+	    => 'Application\Controller\AccountController',	   
+	),
+	'factories' => array(	   
+	    'Application\Controller\User' => function($controllerManager) {
+		/* @var ControllerManager $controllerManager */
+		$serviceManager = $controllerManager->getServiceLocator();
+
+		/* @var RedirectCallback $redirectCallback */
+		$redirectCallback = $serviceManager->get('zfcuser_redirect_callback');
+
+		/* @var UserController $controller */
+		$controller = new Application\Controller\UserController($redirectCallback);
+
+		return $controller;
+	    },
 	),
     ),
+    
     'view_manager' => array(
 	'doctype' => 'HTML5',
 	'not_found_template' => 'error/404',

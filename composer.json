@@ -47,8 +47,8 @@
         "kriswallsmith/assetic":"*",
         "rwoverdijk/assetmanager":"*",
         "diniska/chemistry": "*",
-        "bjyoungblood/bjy-authorize":"1.4.*",
-        "danielss89/zfc-user-admin": "*@dev"
+        "bjyoungblood/bjy-authorize":"1.4.*"
+       
     },
     "require-dev":{
         "squizlabs/php_codesniffer": "1.*",
