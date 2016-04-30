@@ -5,6 +5,32 @@ use Zend\Mvc\Router\Http\Literal;
 return array(
     'router' => array(
 	'routes' => array(
+	    'zfcuser' => array(
+		'type' => 'Literal',
+		'priority' => 1000,
+		'options' => array(
+		    'route' => '/user',
+		    'defaults' => array(
+			'namespace' => 'zfcuser',
+			'controller' => 'zfcuser',
+			'action' => 'index',
+		    ),
+		),
+		'may_terminate' => true,
+		'child_routes' => array(
+		    'login' => array(
+			'type' => 'Literal',
+			'options' => array(
+			    'route' => '/login',
+			    'defaults' => array(
+				'namespace' => 'Application',
+				'controller' => 'Application\Controller\User',
+				'action' => 'login',
+			    ),
+			),
+		    ),
+		),
+	    ),
 	    'home' => array(
 		'type' => 'Literal',
 		'options' => array(
@@ -20,8 +46,8 @@ return array(
 		'options' => array(
 		    'route' => '/do/login',
 		    'defaults' => array(
-			'controller' => 'Application\Controller\Login',
-			'action' => 'index',
+			'controller' => 'Application\Controller\User',
+			'action' => 'login',
 		    ),
 		),
 		'may_terminate' => true,
@@ -61,34 +87,12 @@ return array(
 	    ),
 	),
     ),
-    'aliases' => array(
-	'bjyauthorize_zend_db_adapter' => 'dbAdapter',
-    ),
     'controllers' => array(
-	'invokables' => array(
-	    'Application\Controller\Index'
-	    => 'Application\Controller\IndexController',
-	    'Application\Controller\Login'
-	    => 'Application\Controller\LoginController',
+	'invokables' => array(	       
 	    'Application\Controller\Account'
-	    => 'Application\Controller\AccountController',	   
-	),
-	'factories' => array(	   
-	    'Application\Controller\User' => function($controllerManager) {
-		/* @var ControllerManager $controllerManager */
-		$serviceManager = $controllerManager->getServiceLocator();
-
-		/* @var RedirectCallback $redirectCallback */
-		$redirectCallback = $serviceManager->get('zfcuser_redirect_callback');
-
-		/* @var UserController $controller */
-		$controller = new Application\Controller\UserController($redirectCallback);
-
-		return $controller;
-	    },
+	    => 'Application\Controller\AccountController',
 	),
     ),
-    
     'view_manager' => array(
 	'doctype' => 'HTML5',
 	'not_found_template' => 'error/404',
@@ -100,7 +104,7 @@ return array(
     ),
     'service_manager' => array(
 	'factories' => array(
-	    'dbAdapter' => 'Zend\Db\Adapter\AdapterServiceFactory',
+	    'Zend\Db\Adapter\Adapter' => 'Zend\Db\Adapter\AdapterServiceFactory',
 	),
     ),
     'translator' => array(

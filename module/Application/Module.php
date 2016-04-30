@@ -18,13 +18,31 @@ class Module
 	    $logger = $sm->get('Application\Service\LoggingService');
 	    $logger->setDatabaseLogging();
 	});
-
-
     }
 
     public function getConfig()
     {
 	return include __DIR__ . '/config/module.config.php';
+    }
+
+    public function getControllerConfig()
+    {
+	return array(
+	    'factories' => array(
+		'Application\Controller\User' => function($controllerManager) {
+		    /* @var ControllerManager $controllerManager */
+		    $serviceManager = $controllerManager->getServiceLocator();
+
+		    /* @var RedirectCallback $redirectCallback */
+		    $redirectCallback = $serviceManager->get('zfcuser_redirect_callback');
+
+		    /* @var UserController $controller */
+		    $controller = new \Application\Controller\UserController($redirectCallback);
+
+		    return $controller;
+		},
+	    ),
+	);
     }
 
     /**
@@ -68,7 +86,5 @@ class Module
 	    )
 	);
     }
-
- 
 
 }
