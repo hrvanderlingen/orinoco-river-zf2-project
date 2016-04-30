@@ -21,6 +21,10 @@ shell_exec('mkdir data/cache');
 
 shell_exec('chmod 777 data/cache');
 
+shell_exec('mkdir data/logs');
+
+shell_exec('chmod 777 data/logs');
+
 shell_exec('mkdir public_html');
 
 shell_exec('mkdir public_html/css');
