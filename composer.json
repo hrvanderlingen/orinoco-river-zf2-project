@@ -45,9 +45,7 @@
         "rwoverdijk/assetmanager":"*",
         "diniska/chemistry": "*",
         "hrvanderlingen/chemical": "*",
-        "bjyoungblood/bjy-authorize":"1.4.*",
-        "slm/locale": ">=0.1.0,<1.2.0-dev"
-       
+        "bjyoungblood/bjy-authorize":"1.4.*"
     },
     "require-dev":{
         "squizlabs/php_codesniffer": "1.*",
