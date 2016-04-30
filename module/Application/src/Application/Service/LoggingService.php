@@ -29,7 +29,7 @@ class LoggingService
     public function setDatabaseLogging()
     {
 
-	if (!$this->config['db']['profiler']) {
+	if (!isset($this->config['db']['profiler']) || !$this->config['db']['profiler']) {
 	    return false;
 	}
 
