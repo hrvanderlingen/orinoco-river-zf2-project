@@ -1,11 +1,12 @@
 <?php
 
 $modules = array(
-    'Application',
+    
     'ZfcBase',
-    'ZfcUser',
+    'ZfcUser',    
     'AssetManager',
-    'BjyAuthorize',    
+    'BjyAuthorize', 
+    'Application',
 );
 
 

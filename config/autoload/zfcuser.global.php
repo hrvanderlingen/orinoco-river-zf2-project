@@ -31,8 +31,7 @@ $settings = array(
      *
      * Accepted values: boolean true or false
      */
-    //'enable_registration' => true,
-
+    'enable_registration' => false,
     /**
      * Enable Username
      *
@@ -225,7 +224,7 @@ return array(
     'zfcuser' => $settings,
     'service_manager' => array(
         'aliases' => array(
-            'zfcuser_zend_db_adapter' =>  'dbAdapter',
+            'zfcuser_zend_db_adapter' => 'Zend\Db\Adapter\Adapter',
 	),
     ),
 );

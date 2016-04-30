@@ -27,7 +27,7 @@ class LoggingServiceFactory implements FactoryInterface
 	$logFile = $config['logDir'] . '/db.' . date("Y-m-d") . '.txt';
 	$writer = new Stream($logFile);
 	$logger->addWriter($writer);
-	$dbAdapter = $serviceLocator->get('dbAdapter');
+	$dbAdapter = $serviceLocator->get('Zend\Db\Adapter\Adapter');
 	return new LoggingService($config, $logger, $dbAdapter);
     }
 

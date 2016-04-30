@@ -84,8 +84,7 @@ return array(
 	     * You may omit the 'action' index to allow access to the entire controller
 	     */
 	    'BjyAuthorize\Guard\Controller' => array(
-		array('controller' => 'Application\Controller\Index', 'action' => 'index', 'roles' => array('guest', 'user')),
-		array('controller' => 'Application\Controller\Login', 'roles' => array('guest', 'user')),
+		array('controller' => 'Application\Controller\Index', 'action' => 'index', 'roles' => array('guest', 'user')),		
 		array('controller' => 'Application\Controller\Account', 'roles' => array('user')),
 		array('controller' => 'Application\Controller\User', 'roles' => array('guest', 'user')),		
 		array('controller' => 'Chemical\Controller\IndexController', 'roles' => array('guest', 'user', 'admin')),

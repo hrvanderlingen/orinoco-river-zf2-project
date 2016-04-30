@@ -8,11 +8,8 @@
     ],
     "homepage": "http://procedurecheck.wordpress.com/",
     "type":"project",
-    "repositories": [{
-    "type": "vcs",
-    "url": "https://github.com/hrvanderlingen/ZfcUser"
-     }, 
-     {
+    "repositories": [       
+        {
             "type": "package",
             "package": {
                 "name": "hrvanderlingen/chemical",
@@ -23,17 +20,17 @@
                 }
             }
         },
-         {
-            "type": "package",
-            "package": {
-                "name": "diniska/chemistry",
-                "version": "1.0",
-                "dist": {
-                    "url": "https://github.com/diniska/chemistry/archive/master.zip",
-                    "type": "zip"
-                }
-            }
-        }     
+        {
+           "type": "package",
+           "package": {
+               "name": "diniska/chemistry",
+               "version": "1.0",
+               "dist": {
+                   "url": "https://github.com/diniska/chemistry/archive/master.zip",
+                   "type": "zip"
+               }
+           }
+       }     
      
      ],
  
