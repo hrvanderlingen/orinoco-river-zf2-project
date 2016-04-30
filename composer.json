@@ -44,7 +44,9 @@
         "kriswallsmith/assetic":"*",
         "rwoverdijk/assetmanager":"*",
         "diniska/chemistry": "*",
-        "bjyoungblood/bjy-authorize":"1.4.*"
+        "hrvanderlingen/chemical": "*",
+        "bjyoungblood/bjy-authorize":"1.4.*",
+        "slm/locale": ">=0.1.0,<1.2.0-dev"
        
     },
     "require-dev":{
