@@ -3,7 +3,8 @@
 $modules = array(
     
     'ZfcBase',
-    'ZfcUser',    
+    'ZfcUser',
+    'ZfcAdmin',
     'AssetManager',
     'BjyAuthorize', 
     'Application',

@@ -52,6 +52,7 @@ return array(
 	'resource_providers' => array(
 	    'BjyAuthorize\Provider\Resource\Config' => array(
 		'account' => array(),
+		'admin' => array(),
 	    ),
 	),
 	/* rules can be specified here with the format:
@@ -65,7 +66,8 @@ return array(
 		'allow' => array(
 		    // allow guests and users (and admins, through inheritance)
 		    // the "wear" privilege on the resource "pants"
-		    array(array('user'), 'account', 'edit')
+		    array(array('user'), 'account', 'edit'),
+		    array(array('admin'), 'admin', 'edit')
 		),
 		// Don't mix allow/deny rules if you are using role inheritance.
 		// There are some weird bugs.
@@ -87,7 +89,8 @@ return array(
 		array('controller' => 'Application\Controller\Index', 'action' => 'index', 'roles' => array('guest', 'user')),		
 		array('controller' => 'Application\Controller\Account', 'roles' => array('user')),
 		array('controller' => 'Application\Controller\User', 'roles' => array('guest', 'user')),		
-		array('controller' => 'Chemical\Controller\IndexController', 'roles' => array('guest', 'user', 'admin')),
+		array('controller' => 'Zf2UserAdmin\Controller\IndexController', 'roles' => array('admin')),
+		array('controller' => 'Application\Controller\AdminController', 'roles' => array('admin')),
 		// You can also specify an array of actions or an array of controllers (or both)
 		// allow "guest" and "admin" to access actions "list" and "manage" on these "index",
 		// "static" and "console" controllers

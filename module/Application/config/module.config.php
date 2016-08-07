@@ -5,6 +5,17 @@ use Zend\Mvc\Router\Http\Literal;
 return array(
     'router' => array(
 	'routes' => array(
+	    'zfcadmin' => array(
+		'type' => 'literal',
+		'options' => array(
+		    'route' => '/admin',
+		    'defaults' => array(
+			'controller' => 'Application\Controller\AdminController',
+			'action' => 'index',
+		    ),
+		),
+		'may_terminate' => true,
+	    ),
 	    'zfcuser' => array(
 		'type' => 'Literal',
 		'priority' => 1000,
@@ -41,6 +52,7 @@ return array(
 		    ),
 		),
 	    ),
+	   
 	    'custom-login-page' => array(
 		'type' => 'Literal',
 		'options' => array(
@@ -52,6 +64,7 @@ return array(
 		),
 		'may_terminate' => true,
 	    ),
+	  
 	    'account' => array(
 		'type' => 'Literal',
 		'options' => array(
@@ -85,12 +98,18 @@ return array(
 		),
 		'may_terminate' => true,
 	    ),
+	   
 	),
     ),
     'controllers' => array(
 	'invokables' => array(	       
 	    'Application\Controller\Account'
 	    => 'Application\Controller\AccountController',
+	    'Application\Controller\Index'
+	    => 'Application\Controller\IndexController',
+	    'Application\Controller\AdminController'
+	    => 'Application\Controller\AdminController',
+	   
 	),
     ),
     'view_manager' => array(
