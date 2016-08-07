@@ -7,17 +7,30 @@ use Zend\Mvc\MvcEvent;
 class Module
 {
 
-    public function onBootstrap($e)
+    public function onBootstrap(MvcEvent $e)
+    {
+	$this->setDatabaseLogging($e);
+    }
+
+    /**
+     * Switch on database logging based on configuration setting
+     * @param MvcEvent $e
+     */
+    protected function setDatabaseLogging(MvcEvent $e)
     {
 
-	$eventManager = $e->getApplication()->getEventManager();
-	$eventManager->attach(MvcEvent::EVENT_FINISH, function($e) {
-
-	    $app = $e->getApplication();
-	    $sm = $app->getServiceManager();
-	    $logger = $sm->get('Application\Service\LoggingService');
-	    $logger->setDatabaseLogging();
-	});
+	$app = $e->getApplication();
+	$sm = $app->getServiceManager();
+	$config = $sm->get('Config');
+	if (isset($config['db']['profiler']) && $config['db']['profiler']) {
+	    $eventManager = $e->getApplication()->getEventManager();
+	    $eventManager->attach(MvcEvent::EVENT_FINISH, function($e) {
+		$app = $e->getApplication();
+		$sm = $app->getServiceManager();
+		$logger = $sm->get('Application\Service\LoggingService');
+		$logger->setDatabaseLogging();
+	    });
+	}
     }
 
     public function getConfig()

@@ -13,6 +13,7 @@ return array(
 	'dsn' => 'mysql:dbname=zf2project;host=localhost',
 	'username' => 'xxxxxxxx',
         'password' => 'xxxxxxxx',
+	'profiler' => 0
     ),
-    'logDir' => __DIR__ . '/../../data/logs'
+    'logDir' => __DIR__ . '/../../data/logs'   
 );

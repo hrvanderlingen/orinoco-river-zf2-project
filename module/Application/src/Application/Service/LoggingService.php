@@ -5,7 +5,11 @@ namespace Application\Service;
 use Zend\Log\Logger;
 use Zend\Db\Adapter\ParameterContainer;
 use Zend\Db\Adapter\Profiler\Profiler;
+use Zend\Db\Adapter\Adapter;
 
+/**
+ * Class for database logging with profiler
+ */
 class LoggingService
 {
 
@@ -17,10 +21,11 @@ class LoggingService
      * Constructor
      *
      * @param array $config
-     * @return LoggingService
+     * @param Logger $logger
+     * @param Adapter $dbAdapter
      */
-    public function __construct(array $config, Logger $logger, $dbAdapter)
-    {
+    public function __construct(array $config, Logger $logger, Adapter $dbAdapter)
+    {	
 	$this->config = $config;
 	$this->logger = $logger;
 	$this->dbAdapter = $dbAdapter;
