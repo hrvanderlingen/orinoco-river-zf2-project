@@ -13,13 +13,13 @@ class UserController extends zfcUserController
 
     const ROUTE_CHANGEPASSWD = 'changepassword';
     const ROUTE_CHANGEEMAIL = 'changeemail';
-    
 
     /**
      * @param callable $redirectCallback
      */
     public function __construct($redirectCallback)
-    {	
-	parent::__construct($redirectCallback);
+    {
+        parent::__construct($redirectCallback);
     }
+
 }

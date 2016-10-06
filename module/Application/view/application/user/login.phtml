@@ -34,7 +34,7 @@
             </div><div class="form-group">
 
                 <?php if ($this->redirect): ?>
-                    <input type="hidden" name="redirect" value="<?php echo $this->escapeHtml($this->redirect) ?>" />
+                <input type="hidden" name="redirect" value="<?php echo $this->escapeHtml($this->redirect) ?>" />
                 <?php endif ?>
 
                 <?php echo $this->formButton($form->get('submit')->setAttribute('class', 'btn btn-default')) ?>

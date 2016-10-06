@@ -7,18 +7,20 @@ use Zend\Mvc\Service\ServiceManagerConfig;
 use Zend\ServiceManager\ServiceManager;
 use RuntimeException;
 
-error_reporting(E_ALL | E_STRICT);
-chdir(__DIR__);
-
 /**
  * Test bootstrap, for setting up autoloading
  */
 class Bootstrap
 {
+
     protected static $serviceManager;
 
     public static function init()
     {
+        DEFINE("APPLICATION_ENVIRONMENT", "development");
+        error_reporting(E_ALL | E_STRICT);
+        chdir(__DIR__);
+
         $zf2ModulePaths = array(dirname(dirname(__DIR__)));
         if (($path = static::findParentPath('vendor'))) {
             $zf2ModulePaths[] = $path;
@@ -72,10 +74,8 @@ class Bootstrap
         }
 
         if (!$zf2Path) {
-            throw new RuntimeException(
-                'Unable to load ZF2. Run `php composer.phar install` or'
-                . ' define a ZF2_PATH environment variable.'
-            );
+            throw new RuntimeException('Unable to load ZF2. Run `php composer.phar install` or'
+            . ' define a ZF2_PATH environment variable.');
         }
 
         if (file_exists($vendorPath . '/autoload.php')) {
@@ -106,7 +106,9 @@ class Bootstrap
         }
         return $dir . '/' . $path;
     }
+
 }
 
-Bootstrap::init();
-Bootstrap::chroot();
+error_reporting(E_ALL | E_STRICT);
+chdir(__DIR__);
+

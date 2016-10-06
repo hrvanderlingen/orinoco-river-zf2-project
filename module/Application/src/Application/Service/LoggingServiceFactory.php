@@ -10,7 +10,6 @@ use Application\Service\LoggingService;
 
 /**
  * Factory class for LoggingService
- * 
  */
 class LoggingServiceFactory implements FactoryInterface
 {
@@ -22,13 +21,13 @@ class LoggingServiceFactory implements FactoryInterface
      */
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
-	$logger = new Logger;
-	$config = $serviceLocator->get('Config');
-	$logFile = $config['logDir'] . '/db.' . date("Y-m-d") . '.txt';
-	$writer = new Stream($logFile);
-	$logger->addWriter($writer);
-	$dbAdapter = $serviceLocator->get('Zend\Db\Adapter\Adapter');
-	return new LoggingService($config, $logger, $dbAdapter);
+        $logger = new Logger;
+        $config = $serviceLocator->get('Config');
+        $logFile = $config['logDir'] . '/db.' . date("Y-m-d") . '.txt';
+        $writer = new Stream($logFile);
+        $logger->addWriter($writer);
+        $dbAdapter = $serviceLocator->get('Zend\Db\Adapter\Adapter');
+        return new LoggingService($config, $logger, $dbAdapter);
     }
 
 }

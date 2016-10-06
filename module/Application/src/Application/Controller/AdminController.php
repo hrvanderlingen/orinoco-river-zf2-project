@@ -12,9 +12,7 @@ class AdminController extends AbstractActionController
     {
         $viewModel = new ViewModel;
         $viewModel->setTemplate('application/zfc-admin/admin/index.phtml');
-	return $viewModel;
+        return $viewModel;
     }
-
-   
 
 }

@@ -18,17 +18,21 @@ class FlashHelper extends FlashMessenger
      * @param null|bool $autoEscape
      * @return string
      */
-    public function render($namespace = PluginFlashMessenger::NAMESPACE_DEFAULT, array $classes = array(), $autoEscape = null)
+    public function render($namespace = false, array $classes = array(), $autoEscape = null)
     {
         $html = '';
+
+        if (!$namespace) {
+            $namespace = PluginFlashMessenger::NAMESPACE_DEFAULT;
+        }
 
         $this->setMessageOpenFormat('<div%s>
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
                         &times;
                     </button>
                     <ul><li>')
-                ->setMessageSeparatorString('</li><li>')
-                ->setMessageCloseString('</li></ul></div>');
+            ->setMessageSeparatorString('</li><li>')
+            ->setMessageCloseString('</li></ul></div>');
 
 
         // zfcuser module in operation, may send messages as well

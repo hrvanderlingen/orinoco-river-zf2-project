@@ -10,9 +10,9 @@ class AccountController extends AbstractActionController
 
     public function indexAction()
     {
-	$viewModel = new ViewModel;
-	$viewModel->setTemplate('/application/account/index.phtml');
-	return $viewModel;
+        $viewModel = new ViewModel;
+        $viewModel->setTemplate('/application/account/index.phtml');
+        return $viewModel;
     }
 
 }
