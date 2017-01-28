@@ -11,9 +11,9 @@ return array(
     'db' => array(
         'driver' => 'pdo',
 	'dsn' => 'mysql:dbname=zf2project;host=localhost',
-	'username' => 'xxxxxxxx',
-        'password' => 'xxxxxxxx',
-	'profiler' => 0
+	'username' => 'root',
+        'password' => '',
+	
     ),
     'logDir' => __DIR__ . '/../../data/logs'   
 );
