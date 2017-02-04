@@ -41,9 +41,9 @@ ln -s  "$path/$ts$public_html" "public_html"
 cd "$path/$ts"
 cd "vendor/bin"
 
-./classmap_generator.php -w --library ../zendframework/zendframework/library/Zend --output ../zend_autoload_classmap.php
-./classmap_generator.php -w --library  ../../module/Application      --output  ../../module/Application/autoload_classmap.php
-./classmap_generator.php -w --library  ../../module/Application/view --output ../../module/Application/template_map.php
+./classmap_generator.php -w --library  ../zendframework/zendframework/library/Zend --output ../zend_autoload_classmap.php
+./classmap_generator.php -w --library  ../../module/Application    --output  ../../module/Application/autoload_classmap.php
+./templatemap_generator.php -w --library  ../../module/Application/view    --output ../../module/Application/template_map.php
 
 cd "$path/$ts"
 cp -R ../configs/* config/autoload
