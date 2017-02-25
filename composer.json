@@ -38,8 +38,7 @@
         "rwoverdijk/assetmanager":"*",
         "diniska/chemistry": "*",
         "hrvanderlingen/chemical": "dev-master",
-        "bjyoungblood/bjy-authorize":"1.4.*",
-        "firebase/php-jwt": "dev-master"    
+        "bjyoungblood/bjy-authorize":"1.4.*"       
     },
     "require-dev":{
         "squizlabs/php_codesniffer": "1.*",
