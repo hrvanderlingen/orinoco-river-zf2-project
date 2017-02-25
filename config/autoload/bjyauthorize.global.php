@@ -4,7 +4,7 @@ return array(
     'bjyauthorize' => array(
 	// set the 'guest' role as default (must be defined in a role provider)
 	'default_role' => 'guest',
-	'unauthorized_strategy' => 'UnauthorizedStrategy',
+	//'unauthorized_strategy' => 'UnauthorizedStrategy',
 	/* this module uses a meta-role that inherits from any roles that should
 	 * be applied to the active user. the identity provider tells us which
 	 * roles the "identity role" should inherit from.
@@ -88,8 +88,8 @@ return array(
 	    'BjyAuthorize\Guard\Controller' => array(
 		array('controller' => 'Application\Controller\Index', 'action' => 'index', 'roles' => array('guest', 'user')),		
 		array('controller' => 'Application\Controller\Account', 'roles' => array('user')),
-		array('controller' => 'Application\Controller\User', 'roles' => array('guest', 'user')),		
-		array('controller' => 'Zf2UserAdmin\Controller\IndexController', 'roles' => array('admin')),
+		array('controller' => 'Application\Controller\User', 'roles' => array('guest', 'user', 'admin')),
+                array('controller' => 'Zf2UserAdmin\Controller\IndexController', 'roles' => array('admin')),
 		array('controller' => 'Application\Controller\AdminController', 'roles' => array('admin')),
 		// You can also specify an array of actions or an array of controllers (or both)
 		// allow "guest" and "admin" to access actions "list" and "manage" on these "index",
