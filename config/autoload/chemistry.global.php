@@ -11,6 +11,7 @@ return array(
 	'guards' => array(
 	    'BjyAuthorize\Guard\Controller' => array(
 		array('controller' => 'chemistry', 'roles' => array('guest', 'user', 'admin')),
+                array('controller' => 'rest', 'roles' => array('guest', 'user', 'admin')),
 	    ),
 	),
     ),
