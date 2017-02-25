@@ -9,16 +9,9 @@
     "homepage": "http://procedurecheck.wordpress.com/",
     "type":"project",
     "repositories": [       
-        {
-            "type": "package",
-            "package": {
-                "name": "hrvanderlingen/chemical",
-                "version": "1.0",
-                "dist": {
-                    "url": "https://github.com/hrvanderlingen/chemical/archive/master.zip",
-                    "type": "zip"
-                }
-            }
+        {          
+            "url": "https://github.com/hrvanderlingen/chemical.git",
+             "type": "git"			            
         },
         {
            "type": "package",
@@ -44,8 +37,9 @@
         "kriswallsmith/assetic":"*",
         "rwoverdijk/assetmanager":"*",
         "diniska/chemistry": "*",
-        "hrvanderlingen/chemical": "*",
-        "bjyoungblood/bjy-authorize":"1.4.*"
+        "hrvanderlingen/chemical": "dev-master",
+        "bjyoungblood/bjy-authorize":"1.4.*",
+        "firebase/php-jwt": "dev-master"    
     },
     "require-dev":{
         "squizlabs/php_codesniffer": "1.*",
