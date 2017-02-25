@@ -10,8 +10,8 @@ return array(
         'display_exceptions' => false),
     'db' => array(
         'driver' => 'pdo',
-	'dsn' => 'mysql:dbname=zf2project;host=localhost',
-	'username' => 'root',
+	'dsn' => 'mysql:dbname=orinoco;host=localhost',
+        'username' => 'root',
         'password' => '',
 	
     ),
