@@ -1,0 +1,21 @@
+{
+  "name": "orinoco",
+  "homepage": "https://github.com/hrvanderlingen/orinoco-river-zf2-project",
+  "authors": [
+    "Rik <info@assessmentee.com>"
+  ],
+  "description": "demo application",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap": "v4.0.0-alpha.6",
+    "jquery": "^3.2.1"
+  }
+}

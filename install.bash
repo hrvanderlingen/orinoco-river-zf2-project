@@ -1,5 +1,11 @@
 #!/bin/bash
 
+args=("$@")
+
+printf "start\r\n"
+
+printf "${args[0]}\r\n"
+
 path=/c/xampp/htdocs/orinoco.test
 
 ts=$(date +%s)
@@ -10,7 +16,13 @@ git clone git@github.com:hrvanderlingen/orinoco-river-zf2-project.git  $path/$ts
 
 cd "$path/$ts"
 
-composer update
+if [ ${args[0]} == 'production' ]
+then
+composer install --no-dev
+
+else
+composer install
+fi
 
 mkdir "$path/$ts/data"
 
@@ -50,4 +62,21 @@ vendor/bin/templatemap_generator.php  -w --view   "module/Application/view"    -
 cd "$path/$ts"
 cp -R ../configs/* config/autoload
 
+if [ ${args[0]} == 'production' ]
+then
 sass -t compressed  public_html/scss/*.scss public_html/css/style.min.css
+
+else
+sass public_html/scss/*.scss public_html/css/style.css
+fi
+npm install
+bower install
+
+if [ ${args[0]} == 'production' ]
+then
+gulp --production
+
+else
+gulp
+fi
+
