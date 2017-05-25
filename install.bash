@@ -34,13 +34,7 @@ chmod 777 "$path/$ts/data/cache"
 
 mkdir "$path/$ts/public_html/css"
 
-source="/vendor/components"
-
-target="$path/$ts/public_html"
-
-cd  "$target"
-
-ln -sT  "$path/$ts$source" "components" 
+mkdir "$path/$ts/public_html/components"
 
 public_html="/public_html"
 
@@ -74,7 +68,7 @@ bower install
 
 if [ ${args[0]} == 'production' ]
 then
-gulp --production
+grunt --production
 
 else
 gulp
