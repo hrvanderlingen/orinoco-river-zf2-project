@@ -58,19 +58,22 @@ cp -R ../configs/* config/autoload
 
 if [ ${args[0]} == 'production' ]
 then
-sass -t compressed  public_html/scss/*.scss public_html/css/style.min.css
+
+    sass -t compressed  public_html/scss/*.scss public_html/css/style.min.css
+    npm install --production
+    bower install --production
+    grunt --env=production
+    rm -f public_html/scss/*
+    rm -f public_html/scss
 
 else
-sass public_html/scss/*.scss public_html/css/style.css
-fi
-npm install
-bower install
 
-if [ ${args[0]} == 'production' ]
-then
-grunt --production
+    sass public_html/scss/*.scss public_html/css/style.css
+    npm install
+    bower install
+    grunt
 
-else
-gulp
 fi
+
+
 

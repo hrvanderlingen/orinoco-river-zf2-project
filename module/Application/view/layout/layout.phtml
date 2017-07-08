@@ -10,12 +10,14 @@
 
         <?php $conf = $this->configurationHelper(); ?>
         <?php if ($conf['environment'] == 'production') { ?>
-        <link href="/css/style.min.css" rel="stylesheet">
+            <link href="/css/style.min.css" rel="stylesheet">
+            <script src="/components/orinoco.min.js"></script>
         <?php } else { ?>
-            <link href="/css/style.css" rel="stylesheet">
+        <link href="/css/style.css" rel="stylesheet">
+            <script src="/components/orinoco.js"></script>
         <?php } ?>
 
-            <script src="/components/orinoco.min.js"></script>
+
 
 
         <?php echo $this->headScript(); ?>

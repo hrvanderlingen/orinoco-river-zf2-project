@@ -24,6 +24,8 @@ mkdir "$path/public_html/css"
 
 cd $path
 
+mkdir "$path/$ts/public_html/components"
+
 cd "$path"
 cd "vendor/bin"
 
@@ -36,6 +38,20 @@ cd "module/Application"
 
 cd "$path"
 
-sass -t compressed  public_html/scss/*.scss public_html/css/style.min.css
 
-sass -t  public_html/scss/*.scss public_html/css/style.css
+if [ ${args[0]} == 'production' ]
+then
+
+    sass -t compressed  public_html/scss/*.scss public_html/css/style.min.css
+    npm install --production
+    bower install --production
+    grunt --env=production
+
+else
+
+    sass public_html/scss/*.scss public_html/css/style.css
+    npm install
+    bower install
+    grunt
+
+fi

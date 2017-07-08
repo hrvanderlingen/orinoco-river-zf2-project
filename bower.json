@@ -14,8 +14,10 @@
     "test",
     "tests"
   ],
-  "devDependencies": {
-    "bootstrap": "v4.0.0-alpha.6",
-    "jquery": "^3.2.1"
+  "dependencies": {
+    "bootstrap": "3.x",
+    "jquery": "2.x"
+  },
+  "devDependencies": {   
   }
 }
