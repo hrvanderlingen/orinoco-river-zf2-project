@@ -1,5 +1,6 @@
 {
     "name": "Orinoco River",
+    "minimum-stability": "dev",
     "description": "A ZF2 project",
     "license": "BSD-3-Clause",
     "keywords": [
@@ -12,7 +13,7 @@
         {          
             "url": "https://github.com/hrvanderlingen/chemical.git",
              "type": "git"			            
-        },
+        }  ,
         {
            "type": "package",
            "package": {
@@ -24,7 +25,6 @@
                }
            }
        }     
-     
      ],
  
     "require": {
@@ -33,10 +33,10 @@
         "zf-commons/zfc-user": "*",
         "zf-commons/zfc-admin": "*",        
         "kriswallsmith/assetic":"*",
-        "rwoverdijk/assetmanager":"*",
-        "diniska/chemistry": "*",
+        "rwoverdijk/assetmanager":"*",       
         "hrvanderlingen/chemical": "dev-master",
-        "bjyoungblood/bjy-authorize":"1.4.*"       
+         "diniska/chemistry": "*",  
+        "bjyoungblood/bjy-authorize":"1.4.*"        
     },
     "require-dev":{
         "squizlabs/php_codesniffer": "1.*",
