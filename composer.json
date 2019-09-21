@@ -25,8 +25,7 @@
         "zendframework/zend-component-installer": "^1.0 || ^0.7 || ^1.0.0-dev@dev",
         "zendframework/zend-mvc": "^3.0.1",
         "zfcampus/zf-development-mode": "^3.0",
-        "hrvanderlingen/chemical": "dev-trees",
-        "firebase/php-jwt": "^5.0",
+        "hrvanderlingen/chemical": "dev-trees",       
         "squizlabs/php_codesniffer": "*"       
     },
     "autoload": {
