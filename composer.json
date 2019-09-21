@@ -1,52 +1,57 @@
 {
-    "name": "Orinoco River",
-    "minimum-stability": "dev",
-    "description": "A ZF2 project",
+    "name": "hrvanderlingen/orinoco-river-zf2-project",
+    "description": "Demo site",
+    "type": "project",
     "license": "BSD-3-Clause",
     "keywords": [
-    "framework",
-    "zf2"
+        "framework",
+        "mvc",
+        "zf"
     ],
-    "homepage": "http://procedurecheck.wordpress.com/",
-    "type":"project",
-    "repositories": [       
+    
+     "repositories": [       
         {          
             "url": "https://github.com/hrvanderlingen/chemical.git",
              "type": "git"			            
-        }  ,
-        {
-           "type": "package",
-           "package": {
-               "name": "diniska/chemistry",
-               "version": "1.0",
-               "dist": {
-                   "url": "https://github.com/diniska/chemistry/archive/master.zip",
-                   "type": "zip"
-               }
-           }
-       }     
+        }  
+        
      ],
- 
+       
+    "homepage": "http://framework.zend.com/",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
-        "php": ">=5.3.3",
-        "zendframework/zendframework": "*",
-        "zf-commons/zfc-user": "*",
-        "zf-commons/zfc-admin": "*",        
-        "kriswallsmith/assetic":"*",
-        "rwoverdijk/assetmanager":"*",       
-        "hrvanderlingen/chemical": "dev-master",
-         "diniska/chemistry": "*",  
-        "bjyoungblood/bjy-authorize":"1.4.*"        
+        "php": "^7.3",
+        "zendframework/zend-component-installer": "^1.0 || ^0.7 || ^1.0.0-dev@dev",
+        "zendframework/zend-mvc": "^3.0.1",
+        "zfcampus/zf-development-mode": "^3.0",
+        "hrvanderlingen/chemical": "dev-trees",
+        "firebase/php-jwt": "^5.0",
+        "squizlabs/php_codesniffer": "*"       
     },
-    "require-dev":{
-        "squizlabs/php_codesniffer": "1.*",
-        "phpunit/phpunit": "3.7.*@dev",
-        "codeception/codeception":"1.8"
-    },
-     "autoload": {
+    "autoload": {
         "psr-4": {
+            "Application\\": "module/Application/src/",
             "Chemical\\": "vendor/hrvanderlingen/chemical"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ApplicationTest\\": "module/Application/test/",
+            "Chemical\\": "vendor/hrvanderlingen/chemical"
+        }
+    },
+    "extra": [],
+    "scripts": {
+        "cs-check": "phpcs",
+        "cs-fix": "phpcbf",
+        "development-disable": "zf-development-mode disable",
+        "development-enable": "zf-development-mode enable",
+        "development-status": "zf-development-mode status",
+        "post-create-project-cmd": [
+            "@development-enable"
+        ],
+        "serve": "php -S 0.0.0.0:8080 -t public public/index.php",
+        "test": "phpunit"
     }
-    
 }
