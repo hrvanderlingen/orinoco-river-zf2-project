@@ -1,5 +1,5 @@
 {
-    "name": "hrvanderlingen/orinoco-river-zf2-project",
+    "name": "hrvanderlingen/orinoco-river-zf3-project",
     "description": "Demo site",
     "type": "project",
     "license": "BSD-3-Clause",
@@ -8,16 +8,16 @@
         "mvc",
         "zf"
     ],
-    
-     "repositories": [       
+
+    "repositories": [       
         {          
             "url": "https://github.com/hrvanderlingen/chemical.git",
-             "type": "git"			            
+            "type": "git"			            
         }  
-        
-     ],
-       
-    "homepage": "http://framework.zend.com/",
+
+    ],
+
+    "homepage": "http://procedurecheck.wordpress.com/",
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
@@ -25,22 +25,19 @@
         "zendframework/zend-component-installer": "^1.0 || ^0.7 || ^1.0.0-dev@dev",
         "zendframework/zend-mvc": "^3.0.1",
         "zfcampus/zf-development-mode": "^3.0",
-        "hrvanderlingen/chemical": "dev-trees",       
-        "squizlabs/php_codesniffer": "*"       
+        "hrvanderlingen/chemical": "dev-trees"                 
+    },
+    "require-dev": {       
+        "squizlabs/php_codesniffer": "*"            
     },
     "autoload": {
         "psr-4": {
             "Application\\": "module/Application/src/",
             "Chemical\\": "vendor/hrvanderlingen/chemical"
         }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "ApplicationTest\\": "module/Application/test/",
-            "Chemical\\": "vendor/hrvanderlingen/chemical"
-        }
-    },
-    "extra": [],
+    },   
+    "extra": [
+    ],
     "scripts": {
         "cs-check": "phpcs",
         "cs-fix": "phpcbf",
